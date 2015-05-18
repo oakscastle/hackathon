@@ -1,0 +1,7 @@
+[class='area']:hover, [active='true'] {
+    fill: green;
+}
+
+* {
+    -webkit-transition : all .2s linear;
+}
