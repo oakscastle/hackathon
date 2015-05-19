@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>An Oaks Hackathon</title>
+    <link rel='stylesheet' type='text/css' href='index.css'/>
+    <link rel='stylesheet' type='text/css' href='.../lib/jquery/slideout/css.css'/>
+    <script type='text/javascript' src='//code.jquery.com/jquery-2.1.4.min.js'></script>
+    <script type='text/javascript' src='.../lib/jquery/slideout/javascript'></script>
+    <script type='text/javascript' src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type='text/javascript' src='index.js'></script>
+  </head>
+  <body style='min-height: 100%'>
+    <nav id='menu'>
+      <ul id='icons'>
+	<li id='github' title='GitHub'><a href='//github.com/oakscastle/hackathon'>&#xA0;</a></li>
+	<li id='bitcoin' title='Bitcoin'><a href='bitcoin:1HjJWrXnPufUq9fVkS56Ac5ore5bcisNcf'>&#xA0;</a></li>
+	<li id='twitter' title='Twitter'><a href='//twitter.com/oakscastle'>&#xA0;</a></li>
+	<li id='slack' title='Slack'><a href='//oaks-slack.herokuapp.com'>&#xA0;</a></li>
+      </ul>
+    </nav>
+
+    <main id='panel'>
+      <header>
+	<button class="toggle-button">☰</button>
+      </header>
+    </main>
+    
+    <object id='map' data='.../geo/USA/37604/South Roan Street/1665/floor/1/index.svg'></object>
+
+    <h1 id='floor'>First Floor</h1>
+
+    <h2 id='area'></h2>
+    
+    <div id='schedule'>
+      <h3><a href='issues/'><span class="icon-tasks"></span>Tickets</a></h3>
+      <ul>
+	<li><a href="#">Today's tasks</a></li>
+	<li><a href="#">Urgent</a></li>
+	<li><a href="#">Overdues</a></li>
+	<li><a href="#">Recurring</a></li>
+	<li><a href="#">Settings</a></li>
+      </ul>
+
+      <h3><span class="icon-calendar"></span>Meetings</h3>
+      <ul>
+	<li><a href="#">Team Calendar</a></li>
+	<li><a href="#">Private Calendar</a></li>
+	<li><a href="#">Settings</a></li>
+      </ul>
+
+      <h3><span class="icon-heart"></span>Events</h3>
+      <ul>
+	<li><a href="#">Global favs</a></li>
+	<li><a href="#">My favs</a></li>
+	<li><a href="#">Team favs</a></li>
+	<li><a href="#">Settings</a></li>
+      </ul>
+
+      <h3><span class="icon-heart"></span>Substances</h3>
+
+
+    </div>
+    <script type='text/javascript'>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga')
+
+      ga('create', 'UA-54965257-1', 'auto')
+      ga('require', 'displayfeatures')
+      ga('send', 'pageview')
+    </script>
+  </body>
+</html>

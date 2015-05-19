@@ -1,0 +1,114 @@
+html, body, #map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    -webkit-transition : all .2s linear;
+}
+
+#panel {
+    position: absolute;
+}
+
+#panel * {
+}
+
+#panel button {
+    margin: .75em;
+    padding: .2em .4em;
+    font-size: 20px;
+}
+
+#menu {
+    width: 10em;
+    border-right: 2px #DDD dashed;
+    background-color: #EEE;
+}
+
+#menu ul {
+    padding: 0;
+}
+
+#menu li {
+    list-style-type: none;
+    padding: .25em; 
+}
+
+#menu li:hover, #menu li[active='true'] {
+    background-color: #BBB;
+}
+
+#floor {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    font-size: 55px;
+}
+
+#area {
+    position: absolute;
+    top: 3%;
+    left: 15%;
+    width: 30%;
+    font-size: 40px;
+}
+
+#schedule {
+    position: absolute;
+    top: 63%;
+    left: 15%;
+    border-collapse: collapse;
+}
+
+
+#icons {
+    list-style: none;
+}
+
+#icons li {
+    display: inline-block;
+    margin-left: .1em;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1em;
+    width: 1em;
+    border: 5px solid;
+    border-radius: .75em;
+}
+
+#icons li:hover {
+    border-style: dotted;
+    background-color: #D9E0D9;
+    border-color: darkorange;
+}
+
+#icons a {
+    border: none;
+    display: block;
+    padding: .35em .5em;
+    border-color: #224;
+    height: 100%;
+}
+
+#icons #github {
+    background-image: url('.../image/logo/github/svg.svg');
+    background-size: 90% 90%;
+}
+
+#icons #bitcoin {
+    background-image: url('.../image/logo/bitcoin/svg.svg');
+}
+
+#icons #twitter {
+    background-image: url('.../image/logo/twitter/svg.svg');
+    background-size: 70% 70%;
+}
+
+#icons #mail {
+    background-image: url('.../image/icon/mail/svg.svg');
+    background-size: 65% 65%;
+}    
