@@ -112,3 +112,8 @@ html, body, #map {
     background-image: url('tip/image/icon/mail/svg.svg');
     background-size: 65% 65%;
 }    
+
+#icons #slack {
+    background-image: url('tip/image/logo/slack/png');
+    background-size: 65% 65%;
+}    
