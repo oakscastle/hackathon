@@ -1,12 +1,34 @@
+function parseViewBox( value ) {
+    var viewBox = value.split( /[, ]+/ )
+    return viewBox.map( function( val ) {
+	return isNaN( val ) ? 0 : parseFloat( val )
+    } )
+}
+
+$.fx.step['viewBox'] = function( fx ) {
+    var attr = fx.elem.attributes.getNamedItem( 'viewBox' )
+    if( ! fx.set ) {
+	fx.start = parseViewBox( attr ? attr.nodeValue : '' )
+	fx.end = parseViewBox( fx.end )
+	fx.set = true
+    }
+
+    var box = $.map( fx.start, function( n, i ) {
+	return ( n + fx.pos * ( fx.end[i] - n ) )
+    }).join(' ')
+
+    ;(attr ? attr.nodeValue = box : fx.elem.setAttribute( 'viewBox', box ) )
+}
+
 $( function() {
     var $map = $('#map')
     var $areas = $('<ul/>')
     var areas = {}
-    
+    var lastArea
+	    
     $('#menu').append( $areas )
 
     $map.on( 'load', function() {
-	console.log( $map[0].contentDocument )
 	$('[class="area"]', $map[0].contentDocument).each( function() {
 	    function Area( elem ) {
 		this.$elem = $(elem)
@@ -16,7 +38,6 @@ $( function() {
 		    .replace( /(?:^|\s)\S/g, function( a ) {
 			return a.toUpperCase()
 		    } )
-		console.log( this.name )
 		this.$item = $('<li/>')
 		    .text( this.name )
 		    .data( { id: this.id } )
@@ -54,6 +75,51 @@ $( function() {
 		function() { hovered( $(this).attr( 'id' ) ) },
 		function() { left( $(this).attr( 'id' ) ) }
 	    )
+	    
+	    area.$elem.click( function() {
+		var elem = this
+		var svg = elem.ownerDocument.documentElement
+		var newBox
+
+		var area = areas[$(elem).attr( 'id' )]
+
+		console.log( $(elem).attr( 'id' ), area, lastArea, area == lastArea )
+		
+		if( $('body').hasClass( 'highlighted' ) && area == lastArea ) {
+		    $('body').removeClass( 'highlighted' )
+
+		    var bbox = svg.getBBox()
+		    newBox = [ bbox.x, bbox.y, bbox.width, bbox.height ]
+		} else {
+		    $('body').addClass( 'highlighted' )
+
+		    var bbox = elem.getBBox()
+		
+		    var tfm2elm = elem.getTransformToElement( svg )
+		    
+		    var pad = 50
+		    
+		    var origin = svg.createSVGPoint()
+		    origin.x = bbox.x - pad
+		    origin.y = bbox.y - pad
+		    
+		    var dest = svg.createSVGPoint()
+		    dest.x = origin.x + bbox.width + 2 * pad
+		    dest.y = origin.y + bbox.height + 2 * pad
+		    
+		    origin = origin.matrixTransform(tfm2elm)
+		    dest = dest.matrixTransform(tfm2elm)
+		    
+		    dest.x -= origin.x
+		    dest.y -= origin.y
+		
+		    newBox = [ origin.x, origin.y, dest.x, dest.y ]
+		}
+		
+		$(svg).animate( { viewBox: newBox.join( ' ' ) } )
+		
+		lastArea = area
+	    } )
 	} )
     } )
 

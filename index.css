@@ -23,7 +23,7 @@ html, body, #map {
 }
 
 #menu {
-    width: 10em;
+    width: 11em;
     border-right: 2px #DDD dashed;
     background-color: #EEE;
 }
@@ -117,3 +117,7 @@ html, body, #map {
     background-image: url('tip/image/logo/slack/png');
     background-size: 65% 65%;
 }    
+
+.highlighted #floor {
+    display: none;
+}
