@@ -83,8 +83,6 @@ $( function() {
 
 		var area = areas[$(elem).attr( 'id' )]
 
-		console.log( $(elem).attr( 'id' ), area, lastArea, area == lastArea )
-		
 		if( $('body').hasClass( 'highlighted' ) && area == lastArea ) {
 		    $('body').removeClass( 'highlighted' )
 
