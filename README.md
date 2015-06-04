@@ -11,7 +11,14 @@ It is an experiment in community space by mixing types of locations.
 * Games are group controlled spaces.
 * Anywhere otherwise undesignated is public space.
 
-Development is meant to go around the clock.
+Features of the event:
+
+* Development is active 24 hours a day
+* Cameras are widely deployed and the internet at large is encouraged to participate in meetings
+
+Development is coordinated through regular meetings and demos.
+
+Coders are working on tasks. As they are completed, they are reviewed and changes are merged.
 
 ## Projects
 
